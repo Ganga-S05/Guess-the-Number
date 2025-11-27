@@ -1,0 +1,76 @@
+<div class="centre">
+    <div class="alin">
+<h1 class="hov">GUESS THE NUMBER FROM 1 TO 10</h1>
+<input id="one">
+<button onclick="check()">check</button>
+
+<h2 id="score">Score 10</h2>
+<h3 id="result">You are wrong/right</h3>
+</div>
+<script>
+    var a=document.getElementById("one")
+    var random=Math.floor(Math.random()*10)+1
+    var result=document.getElementById("result")
+    var score=document.getElementById("score")
+    var tscore=10
+    function check(){
+        var input=Number(a.value)
+        if(random==input){
+            console.log("your guess is Rigth...")
+            result.textContent="your guess is Right..."
+           alert("YOU WON THE GAME")
+        }
+         if(tscore <= 0){
+            result.textContent = "Your chances are over! Try again......";
+            return;  
+        }  
+       
+        else{
+            console.log("your guesss is Wrong..")
+             result.textContent="your guess is Wrong.."
+             tscore=tscore-1
+             score.textContent="Score:" + tscore
+
+             
+        }
+    }
+    
+
+    </script>
+    </div>
+    
+    <style>
+        body{
+              background-color: darkblue;
+            margin: 0%;
+            padding: 0%;
+        }
+        h1{
+         color:white
+         
+        }
+        .hov:hover{
+            color:rgb(255, 0, 0) ;
+        }
+        .centre{
+            text-align: center;
+          
+
+            
+        }
+       
+      .alin{
+       margin-bottom: 500px;
+       margin-top: 300px;
+      }
+      h2{
+        color: crimson;
+      }
+      h3{
+        color:burlywood
+      }
+    
+
+
+
+    </style>
